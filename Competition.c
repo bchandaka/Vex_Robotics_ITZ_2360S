@@ -36,7 +36,6 @@ int isAutoLeft = 1;
 bool LCD_CONNECTED = true;
 #include "Pre_Auton.c"
 
-int test = 5;
 int desiredLiftTicks = 0;
 bool isLiftPID = true;
 int desiredChainTicks;
