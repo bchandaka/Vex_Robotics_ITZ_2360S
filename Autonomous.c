@@ -7,9 +7,9 @@
 task autonomous()
 {
 	startTask(MotorSlewRateTask);
-	startTask(PID_Chainbar);
+	startTask(set_fourbar);
 	startTask(PID_Lift);
-	isChainPID = true;
+	isFourbarAuto = true;
 	isLiftPID = true;
 
 

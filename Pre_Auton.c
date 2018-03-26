@@ -6,7 +6,7 @@ void pre_auton()
 	SensorValue[leftDriveQuad] = 0;
 	SensorValue[leftLiftQuad] = 0;
 	SensorValue[rightLiftQuad] = 0;
-	SensorValue[chainQuad] = 0;
+	SensorValue[fourQuad] = 0;
 
   wait1Msec(2000);
 	if(LCD_CONNECTED) {
@@ -26,12 +26,7 @@ void pre_auton()
 		autonOptions[4] = "Stationary";
 		autonOptions[5] = "22 Point";
 		leftStart = tfQuestion("Left Side?");
-		if (leftStart == true){
-		isAutoLeft = 1;
-		}
-		else {
-		isAutoLeft = -1;
-		}
+		isAutoLeft = (leftStart == true) ? 1:-1;
 		delay(500);
 		autoChoice = autonomousSelector();
 		clearLCD(true); //Clear the LCD

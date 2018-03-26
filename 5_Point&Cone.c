@@ -7,13 +7,13 @@ void auto1()
 
 		wait1Msec(400);
 		moveMogo(0);
-		desiredChainTicks = 420; //Move chainbar to up position
+		desiredFourTicks = 420; //Move chainbar to up position
 		moveMogo(-80);
 		wait1Msec(1000);
-		isChainPID = false;
+		isFourbarAuto = false;
 		desiredLiftTicks = 0;
 		drive_straight(-35); //Drive back straight to the 5 point zone
-		moveClaw(110); //Drop a preload on the mobile goal
+		desiredFourTicks = 110; //Drop a preload on the mobile goal
 		wait1Msec(200);
 		turnDegrees(isAutoLeft * 215); //Rotate 135 degrees to the right
 		desiredLiftTicks = 300;

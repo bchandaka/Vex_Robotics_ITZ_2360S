@@ -85,12 +85,12 @@ void moveMogo( int speed)
 	motorReq[rightMogo] = speed;
 }
 
-void moveChain( int speed)
+void moveFourbar( int speed)
 {
-	motorReq[chainbar] = speed;
+	motorReq[fourbar] = speed;
 }
 
-void moveClaw( int speed)
+void rollIntake( int speed)
 {
-	motorReq[claw] = speed;
+	motorReq[intake] = speed;
 }

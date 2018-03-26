@@ -55,13 +55,13 @@ task PID_Lift()
 
 
 // Arctangent Control Algorithim to accurately hold/move the lift to any position
-task PID_Chainbar()
+task set_fourbar()
 {
 	while(true)
 	{
-		if (isChainPID == true)
+		if (isFourbarAuto == true)
 		{
-			moveChain(-90 * atan(0.005 * (desiredChainTicks - SensorValue[chainQuad])));
+			moveFourbar(-90 * atan(0.005 * (desiredFourTicks - SensorValue[fourQuad])));
 		}
 	}
 	wait1Msec(MOTOR_TASK_DELAY);
