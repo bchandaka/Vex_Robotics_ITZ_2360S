@@ -9,8 +9,8 @@ void pre_auton()
 	SensorValue[fourQuad] = 0;
 
   wait1Msec(2000);
-	if(LCD_CONNECTED) {
-
+	if(LCD_CONNECTED)
+	{
 		clearLCD(true);
 		displayLCDCenteredString(0, "PLUG IN");
 		displayLCDCenteredString(1, "BATTERY #2");
@@ -18,13 +18,13 @@ void pre_auton()
 		//{
 		//}//No battery is attached
 
-
 		autonOptions[0] = "None";
 		autonOptions[1] = "5 Point + Cone";
 		autonOptions[2] = "10 Point + Cone";
 		autonOptions[3] = "20 Point + 2 Cone";
 		autonOptions[4] = "Stationary";
 		autonOptions[5] = "22 Point";
+
 		leftStart = tfQuestion("Left Side?");
 		isAutoLeft = (leftStart == true) ? 1:-1;
 		delay(500);
@@ -32,18 +32,5 @@ void pre_auton()
 		clearLCD(true); //Clear the LCD
 		displayLCDCenteredString(0, "Calibrating"); //Set top display
 		displayLCDCenteredString(1, "DO NOT TOUCH"); //Set bottom display
-
-	} else {
-		leftStart = true; //start on left
-		/*
-		0 = none
-		1 = mobile
-		2 = stationary
-		3 = 5 point
-		4 = 10 point
-		5 = 20 point
-		*/
-		autoChoice = 4;
 	}
-
 }
