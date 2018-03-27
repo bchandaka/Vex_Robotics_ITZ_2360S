@@ -1,3 +1,4 @@
+#pragma systemFile
 //LCD Advanced Functions
 const char RIGHT_ARROW = 199;
 const char LEFT_ARROW = 200;
