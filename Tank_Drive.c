@@ -18,7 +18,6 @@ task tankDrive()
 		// Now send out joystick values to motors
 		leftsideDrive( drive_l );
 		rightsideDrive( drive_r );
-		// don't hog CPU
 		wait1Msec( 25 );
 	}
 }
