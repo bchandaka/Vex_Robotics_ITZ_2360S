@@ -10,6 +10,7 @@ int motorReq[ MOTOR_NUM ];
 // Array to hold "slew rate" for the motors, the maximum change every time the task
 // runs checking current motor speed.
 int motorSlew[ MOTOR_NUM ];
+#include "Motor_Functions.c"
 //Task - gradually increment/decrements motor speeds to meet new required motor speeds
 task MotorSlewRateTask()
 {
@@ -55,42 +56,4 @@ task MotorSlewRateTask()
 		// Wait approx the speed of motor update over the spi bus
 		wait1Msec( MOTOR_TASK_DELAY );
 	}
-}
-
-void leftsideDrive( int speed)
-{
-	motorReq[leftDrive] = speed;
-	motorReq[leftWheel] = speed;
-}
-
-void rightsideDrive( int speed)
-{
-	motorReq[rightDrive] = speed;
-	motorReq[rightWheel] = speed;
-}
-
-void leftsideLift( int speed)
-{
-	motorReq[leftLift] = speed;
-}
-
-void rightsideLift( int speed)
-{
-	motorReq[rightLift] = speed;
-}
-
-void moveMogo( int speed)
-{
-	motorReq[leftMogo] = speed;
-	motorReq[rightMogo] = speed;
-}
-
-void moveFourbar( int speed)
-{
-	motorReq[fourbar] = speed;
-}
-
-void rollIntake( int speed)
-{
-	motorReq[intake] = speed;
 }
