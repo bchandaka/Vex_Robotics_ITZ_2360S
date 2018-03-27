@@ -1,5 +1,3 @@
-#include "Auton_Drive_Functions.c"
-#include "Advanced_Auton_Functions.c"
 #include "5_point&Cone.c"
 #include "10_point&Cone.c"
 #include "20_point&Cone.c"
@@ -12,9 +10,7 @@ task autonomous()
 	isFourbarAuto = true;
 	isLiftPID = true;
 
-
 	clearLCD(); //Clear the LCD
-
 
 	displayLCDCenteredString(0, "Running:"); //Display "Running" on top
 	displayLCDCenteredString(1, autonOptions[autoChoice]);
