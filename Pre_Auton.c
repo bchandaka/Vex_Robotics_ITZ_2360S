@@ -14,9 +14,9 @@ void pre_auton()
 		clearLCD(true);
 		displayLCDCenteredString(0, "PLUG IN");
 		displayLCDCenteredString(1, "BATTERY #2");
-		//while( SensorValue[powerExpander] < 500 )
-		//{
-		//}//No battery is attached
+		while( SensorValue[powerExpander] < 500 )
+		{
+		}//No battery is attached
 
 		autonOptions[0] = "None";
 		autonOptions[1] = "5 Point + Cone";
