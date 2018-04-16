@@ -7,18 +7,9 @@ const char LEFT_ARROW = 200;
 #ifndef NUM_AUTON_OPTIONS
 	#define NUM_AUTON_OPTIONS 6
 #endif
-
-
-#ifndef LEFT_BUTTON
-	#define LEFT_BUTTON (nLCDButtons == 1)
-#endif
-#ifndef MIDDLE_BUTTON
-	#define MIDDLE_BUTTON (nLCDButtons == 2)
-#endif
-#ifndef RIGHT_BUTTON
-	#define RIGHT_BUTTON (nLCDButtons == 4)
-#endif
-
+#define LEFT_BUTTON (nLCDButtons == 1 || vexRT[Btn7L] || vexRT[Btn8L] || vexRT[Btn7LXmtr2] || vexRT[Btn8LXmtr2])
+#define MIDDLE_BUTTON (nLCDButtons == 2 || vexRT[Btn7U] || vexRT[Btn7D] || vexRT[Btn8U] || vexRT[Btn8D] || vexRT[Btn7UXmtr2] || vexRT[Btn7DXmtr2] || vexRT[Btn8UXmtr2] || vexRT[Btn8DXmtr2])
+#define RIGHT_BUTTON (nLCDButtons == 4 || vexRT[Btn7R] || vexRT[Btn8R] || vexRT[Btn7RXmtr2] || vexRT[Btn8RXmtr2])
 
 string autonOptions[NUM_AUTON_OPTIONS];
 

@@ -35,6 +35,7 @@ int autoChoice = 4; //run 10 point with cone by default
 bool leftStart = true;
 int isAutoLeft = 1;
 bool LCD_CONNECTED = true;
+
 #include "Pre_Auton.c"
 /*---------------------------------------------------------------------------*/
 /*                                                                           */
