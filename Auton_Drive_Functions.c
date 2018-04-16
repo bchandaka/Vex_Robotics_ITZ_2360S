@@ -4,7 +4,7 @@ void drive_straight(float dist) // distance in inches
 	SensorValue[rightDriveQuad] = 0;
 	int desiredDriveTicks = (dist/(4* PI))*392;
 	while (abs(desiredDriveTicks + SensorValue[rightDriveQuad]) > 12) {
-		leftsideDrive(80* atan(0.009 * (desiredDriveTicks - SensorValue[leftDriveQuad])));
+		leftsideDrive(80* atan(0.009 * (desiredDriveTicks - SensorValue[rightDriveQuad])));
 		rightsideDrive(80* atan(0.009 * (desiredDriveTicks + SensorValue[rightDriveQuad])));
 	}
 	leftsideDrive(0);
