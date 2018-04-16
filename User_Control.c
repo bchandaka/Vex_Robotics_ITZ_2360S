@@ -8,6 +8,7 @@ task usercontrol()
 {
 	startTask( MotorSlewRateTask );
 	startTask( tankDrive );
+	startTask( set_fourbar );
 	isLiftPID = false;
 	isFourbarAuto = false;
 
@@ -69,31 +70,43 @@ task usercontrol()
 
 
 		// Fourbar Controls
-		FourbarCtl = (vexRT[Btn5UXmtr2] << 1) + vexRT[Btn5DXmtr2];
+		FourbarCtl = (vexRT[Btn7UXmtr2] << 3) + (vexRT[Btn7DXmtr2] << 2) + (vexRT[Btn5UXmtr2] << 1) + vexRT[Btn5DXmtr2];
 		switch (FourbarCtl)
 		{
 			case 1: // Btn5Dmtr2
+				isFourbarAuto = false;
 				moveFourbar(120);
 				break;
 			case 2: // Btn5Umtr2
+				isFourbarAuto = false;
 				moveFourbar(-120);
 				break;
+			case 4: //Btn7Dxmtr2
+				isFourbarAuto = true;
+				desiredFourTicks = 0;
+			case 8:
+				isFourbarAuto = true;
+				desiredFourTicks = 260;
+
 			default: //Do nothing when either both or neither are pressed
-				moveFourbar(0);
+				if (isFourbarAuto == false){
+					moveFourbar(0);
+				}
 				break;
 		}
+
 		// Drive Speed Control
 		SpeedCtl = (vexRT[Btn8RXmtr2] << 1) + vexRT[Btn8DXmtr2]  +(vexRT[Btn8UXmtr2] << 2);
 		switch(SpeedCtl)
 		{
 			case 1: //Btn 8D
-				kP_tank = 2; //Fast
+				kP_tank = 2; //Slow
 				break;
 			case 2: //Btn 8R
 				kP_tank = 1.6; //Medium
 				break;
 			case 4: //Btn 8U
-				kP_tank = 1.25; //Slow
+				kP_tank = 1.25; //Fast
 				break;
 			default:
 			 break;
